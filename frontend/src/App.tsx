@@ -44,12 +44,23 @@ function App() {
 
   return (
     <main className="dark min-h-screen bg-background text-foreground">
+      <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+        {loading
+          ? "Loading financial dashboard data."
+          : error
+            ? ""
+            : "Financial dashboard data loaded."}
+      </p>
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8">
           <DashboardHeader period="2024 - Full Year" />
 
           {error ? (
-            <div className="rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive-foreground">
+            <div
+              lang="es"
+              role="alert"
+              className="rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive-foreground"
+            >
               {error}
             </div>
           ) : null}

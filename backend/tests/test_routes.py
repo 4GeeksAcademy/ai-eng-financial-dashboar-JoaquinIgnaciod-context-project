@@ -33,6 +33,13 @@ def test_health_endpoint_returns_ok():
     assert response.json() == {"status": "ok"}
 
 
+def test_api_health_check_endpoint_returns_ok():
+    response = client.get("/api/health-check")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
+
 def test_metrics_endpoint_respects_date_filters():
     base_response = client.get("/api/metrics")
     assert base_response.status_code == 200

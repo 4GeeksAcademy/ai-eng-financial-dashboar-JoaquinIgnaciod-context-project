@@ -20,7 +20,7 @@ export interface FacetsResponse {
 
 /** One alert returned by GET /api/metrics/alerts. */
 export interface AlertEntry {
-  /** Period in which the alert was detected; OpenAPI allows any string and specifies no date/period format. */
+  /** Period in which the alert was detected; OpenAPI allows an unrestricted string and specifies no date/period format. */
   period: string;
   /** Sum of outcome amounts in the alert period, as a number. */
   outcome_total: number;
