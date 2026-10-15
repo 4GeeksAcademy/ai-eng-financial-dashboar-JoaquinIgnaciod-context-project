@@ -46,3 +46,11 @@ La documentación interactiva la genera FastAPI; el README declara `http://local
 ## Hechos fuente
 
 `frontend/src/App.tsx`; `frontend/src/lib/financial-utils.ts`; `backend/app/main.py`; `backend/app/routes.py`; `backend/tests/test_routes.py`; `frontend/src/lib/financial-utils.test.ts`; `docker-compose.yml`; `README.es.md`.
+
+## Habilidad de pruebas web seleccionada
+
+- **Selección:** `webapp-testing`, publicada por `anthropics/skills` e instalada con `npx skills add anthropics/skills@webapp-testing` en `.agents/skills/webapp-testing`.
+- **Justificación:** el frontend ya tiene pruebas unitarias Vitest para utilidades financieras, pero no una rutina automatizada para inspeccionar la aplicación renderizada en navegador. Esta skill guía pruebas locales con Playwright (verificar funcionalidad visible, capturar screenshots e inspeccionar logs del navegador), por lo que complementa las pruebas existentes y la cobertura de accesibilidad/performance de las skills obligatorias `accessibility` y `vercel-react-best-practices`.
+- **Compatibilidad:** es aplicable a la SPA React + Vite actual; no exige adoptar Next.js ni añadir dependencias del frontend. Antes de ejecutar pruebas debe comprobarse que Playwright y el navegador estén disponibles en el entorno.
+- **Procedencia y cautela:** origen público `https://github.com/anthropics/skills`, licencia reportada Apache-2.0. El instalador señaló un riesgo medio y 1 alerta en Socket; revisar los archivos de la skill antes de permitir su ejecución, ya que las skills operan con permisos del agente.
+
